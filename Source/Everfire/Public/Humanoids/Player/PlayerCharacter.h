@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright (C) 2024 Reavers & Marauders (R&M) Game Studios
 
 #pragma once
 
@@ -41,6 +41,7 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Input")
 	TObjectPtr<UInputMappingContext> PlayerMappingContext;
 
+	
 	UPROPERTY(EditAnywhere, Category = "Input|Movement")
 	TObjectPtr<UInputAction> MovementAction;
 

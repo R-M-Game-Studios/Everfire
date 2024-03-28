@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright (C) 2024 Reavers & Marauders (R&M) Game Studios
 
 #pragma once
 
@@ -26,11 +26,14 @@ public:
 
 protected:
 
+	/** The mesh for the item */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Mesh")
 	TObjectPtr<UMeshComponent> ItemMesh;
 
 private:
 
+	/** A sphere that will be use to detect if a player is near the object or not.
+	 *  Main purpose so a popup widget can appear when player is targeting the particular item */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Collision", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<class USphereComponent> OverlapDetectionSphere;
 	
@@ -40,11 +43,14 @@ private:
 	FName ItemTag;	
 
 protected:
+
+	/** Function delegate that calls when overlapping with another actor */
 	UFUNCTION()
 	virtual void ItemBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
 		UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep,
 		const FHitResult & SweepResult);
 
+	/** Function delegate that calls when overlapping with another actor ends */
 	UFUNCTION()
 	virtual void ItemEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
 		UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);

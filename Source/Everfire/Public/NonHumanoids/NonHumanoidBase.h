@@ -29,6 +29,7 @@ public:
 
 protected:
 
+	/** Spherical collision for the Non-Humanoid pawns */
 	TObjectPtr<class USphereComponent> SphereCollider;
 
 };
